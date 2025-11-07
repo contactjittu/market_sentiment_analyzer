@@ -1,0 +1,55 @@
+Market Sentiment Analyzer - Installation Instructions
+=====================================================
+
+Prerequisites:
+- Python 3.7 or higher
+- pip (Python package manager)
+
+Installation Steps:
+===================
+
+1. Install required Python packages:
+   Run the following command in your terminal:
+   
+   pip install streamlit pandas feedparser vaderSentiment matplotlib python-dotenv google-generativeai pytest
+
+   Or if you prefer to install from requirements.txt (if available):
+   pip install -r requirements.txt
+
+2. Set up Google Gemini API Key:
+   - Go to https://aistudio.google.com
+   - Sign in with your Google account
+   - Click on "Get API Key" in the left sidebar
+   - Click "Create API Key" and select "Create API Key in new project"
+   - Copy the generated API key
+
+3. Configure the .env file:
+   - Open the .env file in the project root
+   - Replace "your_gemini_api_key_here" with your actual Gemini API key
+   - Save the file
+
+4. Run the application:
+   - Open terminal in the project directory
+   - Run: python3 -m streamlit run main.py
+   - The application will open in your browser at http://localhost:8501
+
+5. Run tests (optional):
+   - Run: python3 -W ignore -m pytest tests.py -v
+
+Required Packages:
+==================
+- streamlit: Web application framework
+- pandas: Data manipulation and analysis
+- feedparser: RSS feed parsing
+- vaderSentiment: Sentiment analysis
+- matplotlib: Data visualization
+- python-dotenv: Environment variable management
+- google-generativeai: Google Gemini API client
+- pytest: Testing framework
+
+Notes:
+======
+- The application will automatically create a 'news_data' folder to store CSV files
+- Old news files (> 3 months) will be automatically deleted
+- Make sure you have an active internet connection to fetch news and use Gemini API
+
